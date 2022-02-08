@@ -1,6 +1,7 @@
 import { Link, LoaderFunction, useLoaderData } from "remix";
 import * as deseoPost from "./deseo.mdx";
 import * as murmuroPost from "./murmuro.mdx";
+import * as dondePost from "./donde.mdx";
 
 function postFromModule(mod: any) {
   return {
@@ -10,7 +11,11 @@ function postFromModule(mod: any) {
 }
 
 export const loader: LoaderFunction = () => {
-  return [postFromModule(deseoPost), postFromModule(murmuroPost)];
+  return [
+    postFromModule(deseoPost),
+    postFromModule(murmuroPost),
+    postFromModule(dondePost),
+  ];
 };
 
 export default function BlogIndex() {
